@@ -64,11 +64,15 @@ def show_data():
        'MonthlyCharges', 'TotalCharges']]
 
     prediction = modelo_pipeline.predict(df)
-    outcome = 'DANGER!!! VAI VAZAR! TELEMARKETING NELE!!'
-    imagem = 'chefe_brabo.jpg'
+    # outcome = 'DANGER!!! VAI VAZAR! TELEMARKETING NELE!!'
+    # imagem = 'chefe_brabo.jpg'
+    outcome = 'Moderado'
+    imagem = 'Moderado.png'
     if prediction == 0:
-        outcome = 'Ufa... esse cliente vai ficar!! Aproveita pra entubar uns serviços novos!'
-        imagem = 'chefe_feliz.jpg'
+        # outcome = 'Ufa... esse cliente vai ficar!! Aproveita pra entubar uns serviços novos!'
+        # imagem = 'chefe_feliz.jpg'
+        outcome = 'Arrojado'
+        imagem = 'Arrojado.png'
 
     return render_template('result.html', tables=[df.to_html(classes='data', header=True, col_space=10)],
                            result=outcome, imagem=imagem)
